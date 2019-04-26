@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @AllArgsConstructor
 public class WebController {
+
     private PostsService postsService;
 
     @GetMapping("/")
