@@ -12,6 +12,7 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
+# Travis CI gradlew 실행시 권한 필요
 before_install:
   - chmod +x gradlew
 
