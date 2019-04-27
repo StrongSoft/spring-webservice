@@ -18,12 +18,6 @@ before_install:
 
 script: "./gradlew clean build"
 
-# CI 실행 완료시 메일로 알림
-notifications:
-  email:
-    recipients:
-      - regur007@gmail.com
-
 before_deploy:
   - zip -r spring-webservice *
   - mkdir -p deploy
@@ -56,3 +50,10 @@ deploy:
       on:
         repo: StrongSoft/spring-webservice
         branch: master
+
+
+# CI 실행 완료시 메일로 알림
+notifications:
+  email:
+    recipients:
+      - regur007@gmail.com
