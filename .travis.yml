@@ -18,6 +18,12 @@ before_install:
 
 script: "./gradlew clean build"
 
+# CI 실행 완료시 메일로 알림
+notifications:
+  email:
+    recipients:
+      - regur007@gmail.com
+
 before_deploy:
   - zip -r spring-webservice *
   - mkdir -p deploy
@@ -47,6 +53,6 @@ deploy:
     deployment_group: springboot-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
-      on:
-        repo: StrongSoft/spring-webservice
-        branch: master
+    on:
+      repo: StrongSoft/spring-webservice
+      branch: master
